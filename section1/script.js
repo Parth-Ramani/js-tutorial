@@ -26,3 +26,35 @@ let y="7" -3
 
   // falsey values: false, 0, "", null, undefined, NaN
   // truthy values: true, any number that is not falsey, any array, any object, any function
+
+
+
+  //Swtich statement
+
+  let day ="Sunday"
+
+  switch(day){
+    case "Sunday": // day === "Sunday"
+      console.log("Today is Sunday")
+      break;
+    case "Monday":
+      console.log("Today is Monday")
+      break;
+    case "Tuesday":
+      console.log("Today is Tuesday")
+      break;
+    case "Wednesday":
+      console.log("Today is Wednesday")
+      break;
+    case "Thursday":
+      console.log("Today is Thursday")
+      break;
+    case "Friday":
+      console.log("Today is Friday")
+      break;
+    case "Saturday":
+      console.log("Today is Saturday")
+      break;
+    default:
+      console.log("Invalid day")
+  }

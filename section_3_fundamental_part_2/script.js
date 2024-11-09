@@ -215,3 +215,29 @@ console.log(person)
 
 
 console.log(` ${person.name} as ${person.friends.length} friends  and best friend is ${person.friends[0]}`)
+
+
+
+
+const person2 = {
+  name: 'John',
+  birthYear: 1991,
+  calcAge: function() {
+this.age =    2024 - this.birthYear
+    return this.age
+  },
+}
+console.log(person2.calcAge()) // 33
+console.log(person2.age) 
+
+
+const person3 = {
+  name: 'John',
+  birthYear: 1991,
+  calcAge: function() {
+return ` ${this.name} is ${2024-this.birthYear} years old teacher and he has a drivers license`}
+  
+}
+
+
+console.log(person3.calcAge())

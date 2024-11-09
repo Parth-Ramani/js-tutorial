@@ -261,5 +261,5 @@ for(let rep = 1; rep<= 10; rep++) {
 const names = ['John', 'Jane', 'Bob'];
 
 for(let i=0;i<= names.length; i++) {
-  console.log(i,names[i]);
+  console.log(i)
 }

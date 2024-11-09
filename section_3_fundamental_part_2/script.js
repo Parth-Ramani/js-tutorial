@@ -65,3 +65,21 @@ const yearsUntilRetirement = (age, retirementAge) => {
 
 const yearsUntilRetirements = yearsUntilRetirement(40, 65);
 console.log(yearsUntilRetirements); // 25
+
+
+
+// function calling another function
+
+const cutpieces=(fruits)=>{
+  return fruits * 4
+}
+
+const totalFruits = function(oragnes,apples){
+  const fruit1 = cutpieces(oragnes);
+  const fruit2 = cutpieces(apples);
+  const juice = `juice from ${fruit1} oranges and ${fruit2} apples`;
+  return juice;
+}
+// totalFruits(10, 5); 
+console.log(totalFruits(10, 5)); // juice from 40 oranges and 20 apples 
+

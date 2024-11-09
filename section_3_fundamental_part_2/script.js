@@ -83,3 +83,105 @@ const totalFruits = function(oragnes,apples){
 // totalFruits(10, 5); 
 console.log(totalFruits(10, 5)); // juice from 40 oranges and 20 apples 
 
+
+
+
+
+// Arrays examples
+
+const fruits = ['apple', 'banana', 'orange'];
+
+console.log(fruits[0]); // apple
+console.log(fruits.length); // 3
+
+fruits[1] = 'grape';
+console.log(fruits); // ['apple', 'grape', 'orange']
+
+// arrays with mulatiple data types
+
+const mixedArray = ['apple', 1, true, null, undefined];
+
+console.log(mixedArray); // ['apple', 1, true, null, undefined]
+
+
+
+
+
+// array methods and properties all in JavaScript
+
+console.log(fruits.includes('banana')); // true
+console.log(fruits.indexOf('banana')); // 1
+
+console.log(fruits.reverse()); // ['orange', 'grape', 'apple']
+console.log(fruits); // ['orange', 'grape', 'apple']
+
+console.log(fruits.push('peach')); // 5
+console.log(fruits); // ['apple', 'grape', 'orange', 'peach']
+
+console.log(fruits.pop()); // 'peach'
+console.log(fruits); // ['apple', 'grape', 'orange']
+
+const newArray = fruits.slice(1); // ['grape', 'orange'] from the index 1 to the end
+console.log(newArray);
+
+
+// splice() method
+let colors = ['red', 'green', 'blue', 'yellow', 'purple'];
+console.log("increment element", colors[0+1]);          // ["red", "green", "blue", "yellow", "purple"]
+let removedColors = colors.splice(1, 2); // Start at index 1, remove 2 elements
+console.log(colors);          // ["red", "yellow", "purple"]
+console.log(removedColors);    // ["green", "blue"]
+
+
+// original array ['apple', 'grape', 'orange']
+const newArray2 = fruits.splice(1, 1, 'kiwi'); // ['apple', 'kiwi', 'orange'] from the index 1 to remove 1 element and replace it with 'kiwi'
+console.log(newArray2);
+
+
+// mutator methods all - change the original array
+// push() – Adds one or more elements to the end.
+// pop() – Removes the last element.
+// shift() – Removes the first element.
+// unshift() – Adds one or more elements to the beginning.
+// splice() – Adds/removes elements at a specific index.
+// sort() – Sorts elements in place.
+// reverse() – Reverses the array.
+// copyWithin() – Copies part of an array within the array.
+// fill() – Fills elements with a static value. 
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.push(6); // [1, 2, 3, 4, 5, 6]
+numbers.unshift(0); // [0, 1, 2, 3, 4, 5, 6]
+
+
+// Accessor Methods (do not modify the original array):
+
+// concat() – Joins two or more arrays.
+// slice() – Returns a shallow copy of part of the array.
+// includes() – Checks if an array includes a certain element.
+// indexOf() – Returns the first index of an element.
+// lastIndexOf() – Returns the last index of an element.
+// join() – Joins all elements into a string.
+// toString() – Converts the array to a string.
+// toLocaleString() – Converts elements to a localized string.
+
+
+// Mutator Methods (modify the original array):
+// Iteration Methods (typically used for looping):
+
+// forEach() – Executes a function for each element.
+// map() – Creates a new array with the results of a function.
+// filter() – Creates a new array with elements that pass a test.
+// reduce() – Applies a function to reduce the array to a single value.
+// reduceRight() – Similar to reduce() but from right-to-left.
+// some() – Checks if at least one element meets a condition.
+// every() – Checks if all elements meet a condition.
+// find() – Returns the first element that meets a condition.
+// findIndex() – Returns the index of the first element that meets a condition.
+// keys() – Returns an iterator with keys.
+// values() – Returns an iterator with values.
+// entries() – Returns an iterator with [key, value] pairs.
+// flat() – Flattens nested arrays.
+// flatMap() – Maps and flattens the result.

@@ -144,7 +144,12 @@ console.log(newArray2);
 // shift() – Removes the first element.
 // unshift() – Adds one or more elements to the beginning.
 // splice() – Adds/removes elements at a specific index.
+// splice syntax: array.splice(start, deleteCount, item1, item2,...)
+
 // sort() – Sorts elements in place.
+// sort() syntax: array.sort([compareFunction])
+// sort() example:
+// const sortedNumbers = numbers.sort((a, b) => a - b); // [1, 2, 3, 4, 5]
 // reverse() – Reverses the array.
 // copyWithin() – Copies part of an array within the array.
 // fill() – Fills elements with a static value. 
@@ -185,3 +190,28 @@ numbers.unshift(0); // [0, 1, 2, 3, 4, 5, 6]
 // entries() – Returns an iterator with [key, value] pairs.
 // flat() – Flattens nested arrays.
 // flatMap() – Maps and flattens the result.
+
+
+/// Objects
+
+const person = {
+  name: 'John',
+  age: 30,
+  greet: function() {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+  friends: ['Jane', 'Bob'],
+};
+
+person.greet(); // Hello, my name is John
+person.name = 'parth';
+console.log(person.name); // parth
+// person["name"]= "parth"
+person.greet(); // Hello, my name is parth
+console.log(person['name']
+)
+
+console.log(person)
+
+
+console.log(` ${person.name} as ${person.friends.length} friends  and best friend is ${person.friends[0]}`)

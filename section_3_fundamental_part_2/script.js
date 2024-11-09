@@ -234,10 +234,32 @@ console.log(person2.age)
 const person3 = {
   name: 'John',
   birthYear: 1991,
-  calcAge: function() {
-return ` ${this.name} is ${2024-this.birthYear} years old teacher and he has a drivers license`}
+
+calcAge: function() {
+this.age =    2024  - this.birthYear
+return this.age
+},
+  summary: function() {
+return ` ${this.name} is ${this.calcAge()} years old teacher and he has a drivers license`}
   
 }
 
 
-console.log(person3.calcAge())
+console.log(person3.summary())
+// console.log(person3.calcAge()) 
+
+
+
+for(let rep = 1; rep<= 10; rep++) {
+  console.log(`Lifting weights ${rep} times`);
+}
+
+
+
+/// loop with array
+
+const names = ['John', 'Jane', 'Bob'];
+
+for(let i=0;i<= names.length; i++) {
+  console.log(i,names[i]);
+}

@@ -263,3 +263,31 @@ const names = ['John', 'Jane', 'Bob'];
 for(let i=0;i<= names.length; i++) {
   console.log(i)
 }
+
+
+
+const person4=[
+ 'John',
+   43,
+   'teacher',
+  [
+    {name: 'Jane', age: 32},
+    {name: 'Bob', age: 28},
+  ],
+  true,
+[7,8,9,10],
+
+  
+]
+
+let types=[]
+for(let i =0 ;i<person4.length;i++){
+  // console.log( i, person4[i])
+
+  // types[i] = person4[i]
+
+  if(typeof person4[i] ==='string') continue;
+
+  console.log("all numbers: ", person4[i])
+}
+console.log("types: ", types)

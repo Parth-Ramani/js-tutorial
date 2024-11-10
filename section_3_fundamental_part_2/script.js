@@ -291,3 +291,44 @@ for(let i =0 ;i<person4.length;i++){
   console.log("all numbers: ", person4[i])
 }
 console.log("types: ", types)
+
+const person5=[
+  'John',
+    43,
+    'teacher',
+   [
+     {name: 'Jane', age: 32},
+     {name: 'Bob', age: 28},
+   ],
+   true,
+ [7,8,9,10],
+ 
+   
+ ]
+
+
+ for(let i =person5.length-1 ;i>=0; i--){
+  console.log("reverse " ,person5[i])
+ }
+
+
+
+ // nested loop
+
+
+ for(let i =1; i<=3; i++){
+console.log(`Outer loop run ${i} times`)
+ for(let j=1; j<=5; j++){
+   console.log(`Inner loop run ${j} times`)
+ }
+ }
+
+ // while loop
+ let count = 0
+ while(count<10){
+   console.log("Count: ", count)
+   count++
+ }
+
+
+

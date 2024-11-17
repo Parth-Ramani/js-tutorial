@@ -180,7 +180,7 @@ const jessica ={
 }
 
 
-const jessicaCopy = Object.assign({},jessica);
+const jessicaCopy = Object.assign(jessica);
 jessicaCopy.firstName = 'william';
 console.log(jessicaCopy)
 console.log(jessica)

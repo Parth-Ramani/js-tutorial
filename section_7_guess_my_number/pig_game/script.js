@@ -79,10 +79,64 @@ btnNewGameBtn.addEventListener('click',()=>{
     btnRollDiceBtn.disabled = false
     btnHoldBtn.disabled = false
 
-    // diceEl.style.display = 'none'
 
     current0El.textContent = 0
     current1El.textContent = 0
 
 
 })
+
+
+
+// global and local scope
+
+let globalVar = "global"
+function myFunction() {
+  let localVar = "local"
+  console.log(globalVar) // global
+  console.log(localVar) // local
+
+  function nestedFunction() {
+    console.log(globalVar) // global
+    console.log(localVar) // local
+  }
+  nestedFunction()
+}
+
+// hoisting
+
+// variable 
+
+
+let app1= 'MyApp'
+const app2 = 'MyApp'
+var app = 'MyApp'
+console.log(app)
+
+
+// with functions
+
+function appf() {
+  console.log('MyApp')
+}
+
+const appExpression = function() {
+  console.log('MyApp')
+}
+
+var app4 = function() {
+  console.log('MyApp')
+}   
+app4()
+appf()
+
+
+var z = 10
+let x = 10
+const y = 20
+
+console.log(z=== window.z) // true
+console.log(x=== window.x) // false
+console.log(y=== window.y) // false
+
+

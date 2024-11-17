@@ -106,3 +106,81 @@ const myFun2 = () => {
 };
 
 myFun2(); // window object
+
+const obj2={
+    name:'John',
+}
+
+obj2.num = obj.b // borrowing b from obj
+console.log('borrowed value: ', obj2.num) // borrowed value:  34
+obj2.num //
+
+
+
+// arguments keyword
+
+function myFunction(a, b) {
+  console.log(arguments); // Arguments object
+  console.log(a); // 1
+  console.log(b); // 2
+}
+
+myFunction(1, 2);
+
+
+// rest and spread operators
+
+
+
+function myFunction2(...args) {
+  console.log(args); // [1, 2, 3, 4, 5]
+}
+
+myFunction2(1, 2, 3, 4, 5);
+
+// const argFun =()=>{
+//     console.log(arguments)
+// }
+// argFun(1,2,3,4,5) // not working
+
+
+
+const arr = [1, 2, 3, 4, 5,6];
+
+const arrfunc =function(arr){
+    console.log(arr) // [1, 2, 3, 4, 5]
+}
+
+arrfunc(arr)
+
+// primitive vs reference types
+
+let a = 10;
+let y = a;
+
+y = 20;
+
+// console.log(x); // 10
+// console.log(y); // 20
+// const obj1 = { name: 'John' };
+// const obj2 = obj1;
+
+// obj2.age = 45;
+
+// console.log(obj1.age); // 45
+// console.log(obj2.age); // 45
+
+
+// primitive types vs objects in practice
+
+const jessica ={
+  firstName: 'Jessica',
+  lastName: 'Smith',
+  age: 28,
+}
+
+
+const jessicaCopy = Object.assign({},jessica);
+jessicaCopy.firstName = 'william';
+console.log(jessicaCopy)
+console.log(jessica)

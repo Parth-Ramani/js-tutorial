@@ -193,3 +193,87 @@ let bb = undefined
 console.log(aa ?? bb) // 1
 let cb;
 console.log(typeof cb)// un
+
+
+// for of loops
+
+const colors = ["red", "blue", "green"];
+
+for (let color of colors) {
+  console.log(color);
+}
+
+for (let color of colors.entries()) {
+    console.log(`${color[0]+1} ${color[1]}`); 
+    
+  }
+
+
+  // optional chaining ?.
+  
+  const user1 = {
+    name: "John",
+    address: {
+      city: "New York"
+    }
+  };
+  
+  console.log(user1?.address?.city); // "New York"
+  console.log(user1?.address?.zip); // undefined (no error)
+  console.log(user1?.contact?.phone); // undefined (no error)
+  
+
+  //  Safe Method Calls
+
+  const user2 = {
+    greet() {
+      return "Hello!";
+    }
+  };
+  
+  console.log(user2.greet?.()); // "Hello!"
+  console.log(user2.sayGoodbye?.()); // undefined (no error)
+  
+
+//Dynamic Property Access
+
+const key = "city";
+const user4 = {
+  address: {
+    city: "Paris"
+  }
+};
+
+console.log(user4?.address?.[key]); // "Paris"
+console.log(user4?.contact?.[key]); // undefined (no error)
+
+
+//Optional Chaining with Arrays
+
+const users = [
+    { name: "Alice" },
+    null,
+    { name: "Bob" }
+  ];
+  
+  console.log(users[0]?.name); // "Alice"
+  console.log(users[1]?.name); // undefined (no error)
+  console.log(users[2]?.name); // "Bob"
+
+  
+  // Combining with Nullish Coalescing
+
+  const user6 = {
+    profile: null
+  };
+  
+  console.log(user6?.profile?.age ?? "No age available"); 
+  // "No age available" (because `profile` is null)
+  
+
+  const user7 = {
+    profile: {
+      age: 30
+    }
+  };
+  console.log(user7.profile?.address?.place)

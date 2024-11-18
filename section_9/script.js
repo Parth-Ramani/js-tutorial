@@ -4,10 +4,10 @@
 
 const numbers = [1, 2, 3, 4, 5];
 
-const [r, , s, ...d] = numbers;
+const [r, , ,s, ...d] = numbers;
 
 console.log(r); // 1
-console.log(s); // 3
+console.log(s); //
 console.log(d); // [4, 5]
 
 // arrays in object
@@ -144,3 +144,26 @@ const [one, two,...rest]= [1,2,3,4,5,6]
 console.log(...rest)// 3,4,5,6
 console.log([one]) 
 console.log(two)
+
+
+// objects in the object of opening weekdays
+
+const weekdays ={
+    mon:{
+        day: "Monday",
+        temp: 20
+    },
+    tue:{
+        day: "Tuesday",
+        temp: 25
+    },
+    wed:{
+        day: "Wednesday",
+        temp: 22
+    }
+
+}
+
+const {wed,...weeks}= weekdays
+console.log(wed) // { day: 'Wednesday', temp: 22 }
+console.log(weeks) // { mon: { day: 'Monday', temp: 20 }, tue: { day: 'Tuesday', temp: 25 } }

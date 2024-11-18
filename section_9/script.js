@@ -93,4 +93,54 @@ const person = {
   }
   greet(user)
 
-  
+  // spread operator
+
+  // copy arrayss
+
+  const arr1 = [1, 2, 3];
+  const arr2 = [...arr1]; // [1, 2, 3]
+  console.log(arr1);
+  console.log(arr2); // [1, 2, 3]
+  const arr3 =[4,5,6]
+
+  // combine arrays
+  const combined = [...arr2,...arr3] 
+  console.log(combined) //
+
+
+// iterables: arrays strings but not objects
+
+const  per ='zillion'
+let inArr =[per]
+console.log(inArr) //
+
+//spread operator in objects
+
+const person1 = {
+    name: "John",
+    age: 30,
+    city: "New York",
+  };
+
+  const person2 = {
+    ...person1,
+    country: "USA",
+  };
+  console.log(person2); // { name: "John", age: 30, city: "New York", country: "USA" }
+
+  const objCopy = {...person1}
+  objCopy.name = 'Zillon'
+  console.log(objCopy) // { name: 'Zillon', age: 30, city: 'New York', country: 'USA' }
+  console.log(person1) // { name: 'John', age: 30, city: 'New York', country: 'USA' }
+
+  // Spread  because on RIGHT side of
+
+  const array = [1,2,3,...[4,5,6]]
+  console.log(array) // [1, 2, 3, 4, 5, 6]
+
+//   spread because on LEFT side of
+
+const [one, two,...rest]= [1,2,3,4,5,6]
+console.log(...rest)// 3,4,5,6
+console.log([one]) 
+console.log(two)

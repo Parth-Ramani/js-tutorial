@@ -49,3 +49,48 @@ console.log(a,b)// 1,4
 
 const [p, q, j=1]= [7,8]  
 console.log(p, q,j)
+
+
+// destructuring with object
+
+const user = {
+    name3: "John",
+    age: 30,
+    city: "New York",
+  };
+  
+//   // Without destructuring
+//   const name = user.name;
+//   const age = user.age;
+//   console.log(name, age); // John 30
+  
+  // With destructuring
+  let { name3, age } = user;
+  console.log(name3, age); // John 30
+
+//   //default values
+//     { name3, country = "USA" } = user;
+//   console.log(country); // USA
+
+  // renaming properties
+  const { name3: userName } = user;
+console.log(userName); // John
+
+// extract from nested object
+const person = {
+    name: "Alice",
+    address: { city: "Paris", country: "France" },
+  };
+  const { address: { city, country } } = person;
+  console.log(city, country); //  Paris France
+
+
+  // Use destructuring in function parameters:
+
+
+  function greet({ name3, age }) {
+    console.log(`Hello ${name3}, you are ${age} years old.`);
+  }
+  greet(user)
+
+  

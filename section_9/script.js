@@ -277,3 +277,33 @@ const users = [
     }
   };
   console.log(user7.profile?.address?.place)
+
+
+// looping objects  objects key
+
+const user8 = {
+    name: "John",
+    age: 30,
+    address: {
+      city: "New York"
+    }
+  };
+
+ for (const user of Object.keys(user8)) {
+    console.log(user)
+ }
+ // name age address
+
+ // looping objects values
+ for (const value of Object.values(user8)) {
+    console.log(value)
+ } // John 30 { city: 'New York' }
+
+ // looping objects entries
+ for (const [key, value] of Object.entries(user8)) {
+    console.log(`${key}: ${value}`)
+ }       // name: John age: 30 address: { city: 'New York' }
+
+let properties =Object.keys(user8)
+console.log(properties)
+

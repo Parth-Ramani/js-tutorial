@@ -307,3 +307,27 @@ const user8 = {
 let properties =Object.keys(user8)
 console.log(properties)
 
+// strings methods all lists
+
+console.log("Hello, World!".length); // 13
+console.log("Hello, World!".toUpperCase()); // HELLO, WORLD!
+console.log("Hello, World!".toLowerCase()); // hello, world!
+console.log("Hello, World!".charAt(0)); // H
+console.log("Hello, World!".slice(0, 5)); // Hello
+console.log("Hello, World!".split(" ")); // ["Hello,", "World!"]
+console.log("Hello, World!".replace("World!", "Universe")); // Hello, Universe!
+console.log('Hello, World'.indexOf(" ")) //6
+console.log('Hello, Universe'.trim()); //
+console.log('Hello, Universe'.trimStart())// 
+console.log('Hello, Universe'.trimEnd())//)
+console.log('Hello, Universe'.replace(/hello/g,' '));
+// template literals
+
+const name = "John";
+console.log(`Hello, my name is ${name}.`); // Hello, my name is John.
+
+console.log(new String('jonas')) 
+console.log(typeof new String('jonas')) // object
+
+const arr5 = ['John', 'John', 'John', 'John', 'John'.toUpperCase()].join()
+console.log(arr5);

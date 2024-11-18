@@ -167,3 +167,29 @@ const weekdays ={
 const {wed,...weeks}= weekdays
 console.log(wed) // { day: 'Wednesday', temp: 22 }
 console.log(weeks) // { mon: { day: 'Monday', temp: 20 }, tue: { day: 'Tuesday', temp: 25 } }
+
+
+// OR and AND
+
+console.log(true && true) // true
+console.log(true && false) // false
+console.log(false && true) // false
+console.log("177",1 && 0) //
+
+console.log(true || true) // true
+
+
+
+
+
+
+console.log(false|| false) //
+
+// nullishing operator
+
+let aa = null
+let bb = undefined
+
+console.log(aa ?? bb) // 1
+let cb;
+console.log(typeof cb)// un

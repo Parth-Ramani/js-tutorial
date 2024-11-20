@@ -66,4 +66,33 @@ const checkIn = function (flightNum, passenger) {
 checkIn(flight, jonas);
 // flightNum = flight
 console.log(jonas)
-console.log(flight) 
+console.log(flight)
+
+// higher order function
+
+// Higher-Order Function Example
+function multiplyBy(factor) {
+    return function (number) {
+      return number * factor; // Returns a new function
+    };
+  }
+  
+  const double = multiplyBy(2); // Returns a function that doubles a number
+  console.log(double(5)); // 10
+
+
+  // Callback function definition
+function greet(name) {
+    console.log(`Hello, ${name}!`);
+  }
+  
+  // Higher-order function that uses the callback
+  function processUserInput(callback) {
+    const userName = "Alice"; // Simulate getting a user input
+    callback(userName); // Call the callback function with user input
+  }
+  
+  // Pass the `greet` function as a callback
+  processUserInput(greet);
+  // Output: Hello, Alice!
+  

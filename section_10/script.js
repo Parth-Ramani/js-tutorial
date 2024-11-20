@@ -81,6 +81,18 @@ function multiplyBy(factor) {
   console.log(double(5)); // 10
 
 
+
+/// Simple function which returns the value
+function addNumbers(a, b) {
+    return a + b; // Returns the sum of a and b
+  }
+  
+  const result = addNumbers(5, 3); // Call the function with arguments 5 and 3
+  console.log(result); // Output: 8
+
+
+
+
   // Callback function definition
 function greet(name) {
     console.log(`Hello, ${name}!`);
@@ -96,3 +108,14 @@ function greet(name) {
   processUserInput(greet);
   // Output: Hello, Alice!
   
+
+  function one(){
+    console.log('one')
+  }
+
+  function two(one){
+    console.log('two')
+    one()
+  }
+   two(one) 
+

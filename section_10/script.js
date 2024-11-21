@@ -207,3 +207,89 @@ const numbers = [3, 5, 1, 9, 6];
 // Using apply() to find the maximum number in an array
 const max = Math.max.apply(null, numbers);
 console.log(max); // Output: 9
+
+
+// bind methods
+
+const person3={
+  name2: 'John',
+  greet: function(){
+    console.log(`Hello ${this.name2}`)
+  }
+}
+
+const geetbind = person3.greet.bind(person)
+geetbind() // Hello John
+
+
+// partial function
+
+function multiply(a, b) {
+  return a * b;
+}
+
+const multiplyBy2 = multiply.bind(null,5, 2); // Fix `a` as 2
+console.log(multiplyBy2(5)); // Output: 10
+console.log(multiplyBy2())
+
+const addTax =function(rate){
+  return function(value){
+return rate * value
+  }
+}
+
+const addingTax = addTax(5)
+console.log(addingTax(5))// 25
+
+
+// IIFE
+
+// (function () {
+//   console.log(`Hello, !`);
+// })();
+
+// arrow 
+// (()=> console.log('hello'))();
+
+
+
+
+// closures
+
+function outerFunction() {
+let counter= 0
+return function(){
+counter++;
+console.log(`${counter}`)
+}
+}
+
+const outer = outerFunction();
+outer()
+outer()
+
+//  2nd example
+
+function outerFunction1() {
+  let counter = 0;
+  return function() {
+    counter++;
+    console.log(counter);
+  };
+}
+
+const outer1 = outerFunction1();
+outer1();
+
+
+// 3rd example with settimeout function
+
+function outer2(outerVar) {
+return function (innerVar){
+console.log(`this is ${outerVar} with ${innerVar}`)
+}
+
+}
+
+const fn = outer2('outer')
+fn('inner')

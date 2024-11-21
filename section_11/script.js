@@ -1,6 +1,38 @@
 'use strict';
 
 /////////////////////////////////////////////////
+
+/////////////////////////////////////////////////
+//Lectures
+
+const currencies =new Map([
+  ['USD', 'United States Dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'British Pound'],
+])
+
+const movements=[200,450,-400,3000,-650,-130,70,1300]
+
+
+let str ='hello world'
+// console.log(movements.reverse())
+// console.log(movements.concat(str))
+// console.log(movements.join('-'))
+console.log(movements)
+// console.log(movements.slice(0,2))
+
+movements.forEach((movement) =>
+movement+=movement)
+console.log(movements)
+
+
+// forEach in Maps and sets
+
+currencies.forEach((key, value)=>{
+console.log(`${key}: ${value}`)
+})
+
+
 /////////////////////////////////////////////////
 // BANKIST APP
 
@@ -63,33 +95,27 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-/////////////////////////////////////////////////
-//Lectures
+////////////////////////////////
 
-const currencies =new Map([
-  ['USD', 'United States Dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'British Pound'],
-])
+const displayMovement =function(movements){
+  containerMovements.innerHTML = ''
+  console.log(containerMovements.innerHTML)
 
-const movements=[200,450,-400,3000,-650,-130,70,1300]
+movements.forEach((movement,i)=>{
+const type = movement >0? 'deposit' : 'withdrawal';
+  let html =`
+<div class="movements__row">
+          <div class="movements__type movements__type--${type}"> ${i+1} ${type}</div>
+          <div class="movements__date">3 days ago</div>
+          <div class="movements__value">${movement}</div>
+        </div>`;
 
+        containerMovements.insertAdjacentHTML('afterbegin',html)
 
-let str ='hello world'
-// console.log(movements.reverse())
-// console.log(movements.concat(str))
-// console.log(movements.join('-'))
-console.log(movements)
-// console.log(movements.slice(0,2))
-
-movements.forEach((movement) =>
-movement+=movement)
-console.log(movements)
-
-
-// forEach in Maps and sets
-
-currencies.forEach((key, value)=>{
-console.log(`${key}: ${value}`)
 })
+}
 
+displayMovement(account1.movements)
+console.log(containerMovements.innerHTML)
+console.log('--------------------------------------------------------')
+console.log(containerMovements.insertAdjacentHTML)

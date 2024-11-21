@@ -119,3 +119,91 @@ function greet(name) {
   }
    two(one) 
 
+const greett =function(greeting){
+    return function(name){
+console.log(`hii ${name} ${greeting}`)
+    }
+}
+
+const greetHello = greett('Hello')
+greetHello('John') // hii John Hello
+
+greett('Hello')('smith') // second argument is the name of the return function
+
+
+// call method with arguments
+
+function greet1(name) {
+  console.log(`hello ${name}`)
+}
+
+const obj ={
+  name:'joe',
+}
+
+greet1.call(obj,obj.name)
+console.log(obj)
+
+//
+function sayHello(){
+  console.log(`hello ${this.name}`)
+}
+
+const user={
+  name:'john',
+}
+
+sayHello.call(user)
+
+
+
+//  Passing Arguments with call()
+
+function intro(name,age){
+  console.log(`i am ${name} and ${age} years old`)
+}
+
+const per={}
+intro.call(per,'alliance', 34)
+console.log(per)
+
+
+// borrowing methods with call()
+//Here, getDetails is borrowed from car and applied to bike using call(). The this inside getDetails refers to bike now.
+const car = {
+  brand: 'Tesla',
+  model: 'Model 3',
+  getDetails: function() {
+    console.log(`This is a ${this.brand} ${this.model}.`);
+  }
+};
+
+const bike={
+  brand: 'Harley',
+  model: 'Davidson',
+}
+
+car.getDetails()
+car.getDetails.call(bike)
+
+
+// apply methods
+
+const person1 = {
+  fullName: function(city, country) {
+    console.log(`${this.name} from ${city}, ${country}`);
+  }
+};
+
+const user1 = { name: 'Alice' };
+
+// Using apply() with arguments as an array
+person1.fullName.apply(user1, ['New York', 'USA']); 
+// Output: Alice from New York, USA
+
+
+const numbers = [3, 5, 1, 9, 6];
+
+// Using apply() to find the maximum number in an array
+const max = Math.max.apply(null, numbers);
+console.log(max); // Output: 9

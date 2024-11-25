@@ -11,7 +11,7 @@ const currencies =new Map([
   ['GBP', 'British Pound'],
 ])
 
-const movements=[200,450,-400,3000,-650,-130,70,1300]
+const movements=[200,450,-400,3000,-650,-130,-190,70,1300]
 
 
 let str ='hello world'
@@ -32,7 +32,34 @@ currencies.forEach((key, value)=>{
 console.log(`${key}: ${value}`)
 })
 
+const move =movements.reduce((i,acc, account)=>{
+  console.log(`index ${i} ${account}`)
+return acc+ account
+},5)
+console.log(move)
+const max = movements.reduce((acc,mov)=>{
+  return acc >mov ? acc : mov
+},movements[0])
+console.log(max)
 
+const max1 = movements.reduce((acc, mov, index) => {
+  console.log(`Step ${index}: Comparing acc=${acc} with mov=${mov}`);
+  
+  if (acc > mov) {
+    console.log(`--> acc (${acc}) is greater, keeping acc.`);
+    return acc;
+  } else {
+    console.log(`--> mov (${mov}) is greater, updating acc.`);
+    return mov;
+  }
+}, movements[0]);
+
+console.log(`Maximum value is: ${max1}`);
+
+
+const calc = movements.filter((mov=> mov<0)).map((mov, i,arr)=>{console.log(arr); return mov *1.1})
+
+console.log(calc)
 /////////////////////////////////////////////////
 // BANKIST APP
 
@@ -116,6 +143,36 @@ const type = movement >0? 'deposit' : 'withdrawal';
 }
 
 displayMovement(account1.movements)
-console.log(containerMovements.innerHTML)
-console.log('--------------------------------------------------------')
-console.log(containerMovements.insertAdjacentHTML)
+
+// const numbers = [1, 2, 3];
+// const doubled = numbers.map(num => num *2); 
+// console.log(doubled); // [2, 4, 6]
+
+const calcPrintBalance = function(movements){
+  const balance = movements.reduce((acc,mov)=>{
+
+    return acc + mov
+
+  })
+  labelBalance.textContent = `${balance} EUR`
+}
+
+
+calcPrintBalance(account1.movements)
+
+
+
+const user = "Steven Thomas Williams"
+console.log(accounts)
+const createUsername =function(accs){
+
+  accs.forEach((acc)=>{
+    acc.username = acc.owner.toLowerCase().split(' ').map((ch)=>ch[0]).join('')
+  })
+ 
+}
+createUsername(accounts)
+console.log(accounts)
+
+
+

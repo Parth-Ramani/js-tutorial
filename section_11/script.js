@@ -142,8 +142,6 @@ const type = movement >0? 'deposit' : 'withdrawal';
 })
 }
 
-displayMovement(account1.movements)
-
 // const numbers = [1, 2, 3];
 // const doubled = numbers.map(num => num *2); 
 // console.log(doubled); // [2, 4, 6]
@@ -158,9 +156,20 @@ const calcPrintBalance = function(movements){
 }
 
 
-calcPrintBalance(account1.movements)
 
+const calcDisplaySummary=function(currAcc){
+const income = currAcc.movements.filter((mov)=> {return mov> 0}).reduce((acc,mov)=> acc+mov, 0);
+labelSumIn.textContent = `${income}€`
+const outcome =currAcc.movements.filter((mov)=> {return mov< 0}).reduce((acc,mov)=> acc+mov, 0);
+labelSumOut.textContent = `${Math.abs(outcome)}€`
 
+const interest = 
+currAcc.movements
+.filter((mov)=>  mov> 0)
+.map((deposit)=> deposit * currAcc.interestRate/100).filter((int, i,arr)=> { console.log(arr); return int>=1 })
+.reduce((acc ,int)=> acc+int, 0);
+labelSumInterest.textContent = `${interest}€`
+}
 
 const user = "Steven Thomas Williams"
 console.log(accounts)
@@ -174,5 +183,27 @@ const createUsername =function(accs){
 createUsername(accounts)
 console.log(accounts)
 
+let currentAccount;
+btnLogin.addEventListener('click',(e)=>{
+  e.preventDefault();
 
+  currentAccount =accounts.find((account)=>
+    account.username === inputLoginUsername.value
+  )
+  console.log(currentAccount)
+  console.log('LOGIN')
+if (currentAccount?.pin ===  Number(inputLoginPin.value)){
+ 
+  inputLoginUsername.value = inputLoginPin.value ='';
+  inputLoginPin.blur()
+labelWelcome.textContent = `welcome back,${ currentAccount.owner.split(' ')[0]}`
+console.log(labelWelcome.textContent)
+containerApp.style.opacity = 100
+displayMovement(currentAccount.movements)
+calcPrintBalance(currentAccount.movements)
+calcDisplaySummary(currentAccount)
+
+}
+
+})
 

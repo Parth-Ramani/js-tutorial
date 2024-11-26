@@ -278,3 +278,9 @@ displayMovement(currentAccount.movements, !sorted)
   sorted =!sorted 
 })
 
+const x =new Array(7)
+console.log(x) // 
+
+x.fill(4,1,3)
+console.log(x)
+
